@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Row , Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./wedevelop.scss";
-import {getAllDataStDigitalIcon, getAllDataWedevelop} from "~/service/Apiservice";
+import {getAllDataWedevelop} from "../../../service/Apiservice";
 
 const Wedevelop = () => {
     const [list,setList] = useState([])
@@ -31,9 +31,9 @@ const Wedevelop = () => {
                     <Row className="service--container" >
                                 {list && list.map((item,index) =>{
                                     return(
-                                        <Col className="service--block" xs={12} sm={4} md={4} >
+                                        <Col className="service--block" xs={12} sm={4} md={4} key={item._id}>
                                             <Row className="service--icon">
-                                                <img src={item.img}/>
+                                                <img alt="" src={item.img}/>
                                             </Row>
                                             <Row className="service--content">
                                                 <h3 className="service--title">  {item.title}</h3>

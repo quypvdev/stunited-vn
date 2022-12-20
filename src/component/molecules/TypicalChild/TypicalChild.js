@@ -1,7 +1,6 @@
 import {FaFacebookSquare, FaLinkedin} from "react-icons/fa";
 import './TypicalChild.scss'
 import {Col, Row} from "react-bootstrap";
-import Container from "react-bootstrap/Container";
 
 const TypicalChild = (props) => {
     return (
