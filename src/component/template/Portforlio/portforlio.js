@@ -10,10 +10,10 @@ const Portforlio = () => {
         backGroundFe07: 'https://drive.google.com/uc?export=view&id=12btms3s2HW8gMKW_F_cG6Wvrrb95-94y',
     };
     const bannerCaption = {
-        title: 'Portfolio -ST United',
+        title: 'PORTFOLIO -ST United',
         h1: 'ST PORTFOLIO',
         h2: 'From ideas turned into carefully crafted pixels and problems crafted into solutions.',
-    }
+    };
     const [list, setList] = useState([]);
     useEffect(() => {
         fetchListPortfolio();
@@ -25,10 +25,7 @@ const Portforlio = () => {
     return (
         <>
             <Row className="fe02-container" style={{ margin: '0' }}>
-                <HeaderBanner
-                    backgroundImageFe07={backgroundImageFe07}
-                    bannerCaption={bannerCaption}
-                />
+                <HeaderBanner backgroundImageFe07={backgroundImageFe07} bannerCaption={bannerCaption} />
                 <Col className="fe02-container__wpb">
                     <Row className="fe02-container__wpb__inner">
                         <Row className="fe02-wpb__wrapper">
