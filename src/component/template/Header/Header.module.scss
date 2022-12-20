@@ -87,14 +87,18 @@
     }
 }
 .sub-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     line-height: 18px;
     text-align: left;
     border-bottom: 1px solid #e6e6e6;
-    padding: 15px;
     height: 48px;
 }
 .sub-item-content {
+    width: 100%;
+    padding: 15px;
     color: #2e3e49;
     &:hover {
         color: #00aeef;
