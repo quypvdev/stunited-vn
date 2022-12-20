@@ -1,5 +1,5 @@
 //Layouts
-import Home from '../pages/Home/index';
+import Home from '../pages/Home/home';
 import StDigitalPage from '../pages/STDigital/stDigital';
 import Portfolio from '../pages/Portfolio/portforlio';
 
