@@ -2,7 +2,7 @@ import './StDigital.scss';
 import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
-// import Fe07Header from '~/components/FE07_STSOFTWARE/Fe07Header/Fe07Header';
+import HeaderBanner from '../../molecules/HeaderMedia/HeaderBanner';
 import { getAllDataPortfolio, getAllDataStDigitalIcon, getAllDataStDigitalImage } from '../../../service/Apiservice';
 
 const StDigital = () => {
@@ -35,12 +35,12 @@ const StDigital = () => {
     };
     return (
         <Row className="Stdigital-container" style={{ margin: '0' }}>
-            {/* <Fe07Header
+            <HeaderBanner
                 backgroundImageFe07={backgroundImageFe07}
                 SetBackgroundImageFe07={SetBackgroundImageFe07}
                 bannerCaption={bannerCaption}
                 SetBannerCaption={SetBannerCaption}
-            /> */}
+            />
             <Col className="Stdigital-container-block">
                 <Row className="Stdigital-title-top">
                     <Col className="Stdigital-title-row">
