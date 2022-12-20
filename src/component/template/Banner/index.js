@@ -25,7 +25,7 @@ function Banner() {
     };
 
     return (
-        <>
+        <div className="main-banner-swiper-area">
             <Swiper
                 speed={2000}
                 spaceBetween={30}
@@ -65,7 +65,7 @@ function Banner() {
 
                 <div class="swiper-pagination"></div>
             </Swiper>
-        </>
+        </div>
     );
 }
 

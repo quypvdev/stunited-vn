@@ -42,18 +42,22 @@ a[href] {
 }
 
 .container {
-    padding: 0;
+    width: 100%;
+    padding: 0 15px;
 }
 
 // Customer container respondsive
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .container {
+        width: 100%;
+        padding: 0 15px;
     }
     .mobile-header {
         .container {
             width: 100%;
             max-width: none;
+            padding: 0 15px;
         }
     }
 }
@@ -62,11 +66,13 @@ a[href] {
 @media (min-width: 768px) {
     .container {
         width: 750px;
+        padding: 0 15px;
     }
     .mobile-header {
         .container {
             width: 100%;
             max-width: none;
+            padding: 0 15px;
         }
     }
 }
@@ -75,6 +81,8 @@ a[href] {
 @media (min-width: 992px) {
     .container {
         width: 970px;
+        max-width: 970px;
+        padding: 0;
     }
 }
 
@@ -82,5 +90,7 @@ a[href] {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+        max-width: 1170px;
+        padding: 0;
     }
 }
