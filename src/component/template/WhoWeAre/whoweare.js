@@ -137,7 +137,7 @@ const WhoWeAre = () => {
                         {users &&
                             users.map((item, index) => {
                                 return (
-                                    <Col className="info--user" xs={12} sm={6} md={3}>
+                                    <Col key={index} className="info--user" xs={12} sm={6} md={3}>
                                         <Row className="service--icon">
                                             <img src={item.image} alt="image" />
                                         </Row>
