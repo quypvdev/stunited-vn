@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col } from 'react-bootstrap';
 import HeaderBanner from '../../molecules/HeaderMedia/HeaderBanner';
-import { getAllDataPortfolio, getAllDataStDigitalIcon, getAllDataStDigitalImage } from '../../../service/Apiservice';
+import { getAllDataStDigitalIcon, getAllDataStDigitalImage } from '../../../service/Apiservice';
 
 const StDigital = () => {
     const [backgroundImageFe07, SetBackgroundImageFe07] = useState({
@@ -11,7 +11,7 @@ const StDigital = () => {
         backGroundFe07: 'https://drive.google.com/uc?export=view&id=1txXzanwmlTUCVlBVRsBiUAQqmvWWT6Z2',
     });
     const [bannerCaption, SetBannerCaption] = useState({
-        id: 'BnFe07',
+        title: 'ST Digital -ST United',
         h1: 'ST DIGITAL',
         h2: 'Offshore Digital Marketing Services',
     });
@@ -108,6 +108,7 @@ const StDigital = () => {
                                                                     <img
                                                                         width="300"
                                                                         height="300"
+                                                                        alt=""
                                                                         src={item.image}
                                                                     ></img>
                                                                     <p>

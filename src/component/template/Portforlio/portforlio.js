@@ -6,15 +6,14 @@ import './portforlio.scss';
 import TypicalChild from '../../molecules/TypicalChild/TypicalChild';
 
 const Portforlio = () => {
-    const [backgroundImageFe07, SetBackgroundImageFe07] = useState({
-        id: '1',
+    const backgroundImageFe07 = {
         backGroundFe07: 'https://drive.google.com/uc?export=view&id=12btms3s2HW8gMKW_F_cG6Wvrrb95-94y',
-    });
-    const [bannerCaption, SetBannerCaption] = useState({
-        id: 'BnFe07',
+    };
+    const bannerCaption = {
+        title: 'Portfolio -ST United',
         h1: 'ST PORTFOLIO',
         h2: 'From ideas turned into carefully crafted pixels and problems crafted into solutions.',
-    });
+    }
     const [list, setList] = useState([]);
     useEffect(() => {
         fetchListPortfolio();
@@ -28,9 +27,7 @@ const Portforlio = () => {
             <Row className="fe02-container" style={{ margin: '0' }}>
                 <HeaderBanner
                     backgroundImageFe07={backgroundImageFe07}
-                    SetBackgroundImageFe07={SetBackgroundImageFe07}
                     bannerCaption={bannerCaption}
-                    SetBannerCaption={SetBannerCaption}
                 />
                 <Col className="fe02-container__wpb">
                     <Row className="fe02-container__wpb__inner">
@@ -56,7 +53,6 @@ const Portforlio = () => {
                                     class="button btn"
                                     href="https://storage.googleapis.com/stunited/STU%20SUCCESS%20STORIES.pdf"
                                     title="https://storage.googleapis.com/stunited/STU%20SUCCESS%20STORIES.pdf"
-                                    target="_blank"
                                 >
                                     Download full stories
                                 </a>

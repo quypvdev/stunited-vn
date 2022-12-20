@@ -5,7 +5,6 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper';
 import { Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
-import axios from 'axios';
 import { getAllDataPartner } from '../../../service/Apiservice';
 
 const Partner = () => {
@@ -83,7 +82,7 @@ const Partner = () => {
                     >
                         {list.map((item) => {
                             return (
-                                <SwiperSlide>
+                                <SwiperSlide key={item._id}>
                                     <div className="partner-item">
                                         <a href={item.link}>
                                             {' '}

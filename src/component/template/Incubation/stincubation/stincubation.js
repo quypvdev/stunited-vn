@@ -1,8 +1,6 @@
-import { FaFacebookSquare, FaLinkedin } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
 import './stincubation.scss';
 import { Col, Row } from 'react-bootstrap';
-import { incubationItems } from '~/constant';
+import { incubationItems } from '../../../../constant';
 
 const Stincubation = (props) => {
     return (
@@ -14,7 +12,7 @@ const Stincubation = (props) => {
                             <Row className="wpb__col-context__inner">
                                 <Col className="wpb__col-context__inner__context">
                                     <Col className="wpb__col-context__inner__context__block">
-                                        <a className="block"></a>
+                                        <a className="block"/>
                                         <img src={item.image} alt="image" />
                                         <Col className="wpb__caption--before">
                                             <Row className="wpb__caption__inner">
@@ -46,9 +44,9 @@ const Stincubation = (props) => {
                                                         {item.teamCaption}
                                                     </a>
                                                 </h4>
-                                                <NavLink className="wpb__caption__team-designation" to="">
+                                                <a className="wpb__caption__team-designation" href="">
                                                     {item.teamDesigner}
-                                                </NavLink>
+                                                </a>
                                                 <p className="wpb__caption__team-descriptions">
                                                     {item.teamCaptionHide}
                                                 </p>

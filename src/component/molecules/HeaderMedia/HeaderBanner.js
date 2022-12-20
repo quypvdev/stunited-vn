@@ -26,7 +26,7 @@ const Fe07Header = (props) => {
     }, []);
     return (
         <>
-            <Helmet><title>{props.bannerCaption.h1}</title></Helmet>
+            <Helmet><title>{props.bannerCaption.title}</title></Helmet>
             <Row className="fe07-header-wrap" style={{margin: "0", padding: "0"}}>
                 <Col className="fe07-header-media">
                     <Row className="fe07-banner-parallax" style={{height: "400px"}}>

@@ -35,7 +35,7 @@ const WhoWeAre = () => {
         backGroundFe07: 'https://drive.google.com/uc?export=view&id=199NbLzJqj92MK2FtDUKKOiwpEbl_uNK7',
     };
     const bannerCaption = {
-        id: 'BnFe07',
+        title: 'Who We Are -ST United',
         h1: 'United to grow up together',
         h2: '"No one can do everything, but everyone can do something"',
     };

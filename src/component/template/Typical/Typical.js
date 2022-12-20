@@ -1,6 +1,6 @@
 import './Typical.scss'
 import {useEffect, useState} from "react";
-import {getAllDataFE02} from "~/service/Apiservice"
+import {getAllDataFE02} from "../../../service/Apiservice";
 import {Col, Row} from "react-bootstrap";
 import TypicalChild from "../../molecules/TypicalChild/TypicalChild";
 

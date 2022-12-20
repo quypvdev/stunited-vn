@@ -4,8 +4,8 @@ import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './incubation.scss';
 import Stincubation from './stincubation/stincubation';
-import Fe07Header from '../FE07_STSOFTWARE/Fe07Header/Fe07Header';
-import { getAllDataIncubation, getAllDataIncubationText } from '~/service/Apiservice';
+import Header from '../../molecules/HeaderMedia/HeaderBanner';
+import { getAllDataIncubation, getAllDataIncubationText } from '../../../service/Apiservice';
 
 const Incubation = () => {
     const [list2, setList2] = useState([]);
@@ -26,24 +26,21 @@ const Incubation = () => {
         let res = await getAllDataIncubationText();
         setList(res);
     };
-    const [backgroundImageFe07, SetBackgroundImageFe07] = useState({
-        id: '1',
-        backGroundFe07: 'https://drive.google.com/uc?export=view&id=1I3GbJcwLbDj0NJlnO0FgGomTEBk8erE1   ',
-    });
-    const [bannerCaption, SetBannerCaption] = useState({
-        id: 'BnFe07',
+    const backgroundImageFe07={
+        backGroundFe07: 'https://drive.google.com/uc?export=view&id=1I3GbJcwLbDj0NJlnO0FgGomTEBk8erE1',
+    }
+    const bannerCaption= {
+        title: 'ST INCUBATION -ST United',
         h1: 'ST INCUBATION',
         h2: "We're not a mentor, expert or coach whatsoever. We are a founder and fight together",
-    });
+    }
     return (
         <div className="incubation--container">
             <Row className="banner--container" style={{ margin: '0' }}>
                 {' '}
-                <Fe07Header
+                <Header
                     backgroundImageFe07={backgroundImageFe07}
-                    SetBackgroundImageFe07={SetBackgroundImageFe07}
                     bannerCaption={bannerCaption}
-                    SetBannerCaption={SetBannerCaption}
                 />
             </Row>
             <Container className="st--incubation--container">
@@ -86,7 +83,7 @@ const Incubation = () => {
                                             return (
                                                 <Col className="service--block" xs={12} md={4}>
                                                     <Row className="service--icon">
-                                                        <img src={item.img} />
+                                                        <img src={item.img} alt="" />
                                                     </Row>
                                                     <Row className="service--content">
                                                         <h3 className="service--title"> {item.title}</h3>

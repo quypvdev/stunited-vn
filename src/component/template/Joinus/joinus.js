@@ -20,6 +20,7 @@ const Joinus = () => {
     };
 
     const bannerCaption = {
+        title:"Join Us -ST United",
         h1: 'JOIN ST TEAM NOW',
         h2: '...to get the shit done',
     };
