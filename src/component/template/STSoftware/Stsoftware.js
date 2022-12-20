@@ -1,7 +1,7 @@
 import './Stsoftware.scss'
 import {useEffect, useState} from "react";
 import {Row, Col} from 'react-bootstrap'
-import Fe07Header from "../../molecules/HeaderMedia/HeaderBanner"
+import Header from "../../molecules/HeaderMedia/HeaderBanner"
 import {getAllDataFE02, getAllDataFE07Div1, getAllDataFE07Div2} from "../../../service/Apiservice";
 import TypicalChild from "../../molecules/TypicalChild/TypicalChild";
 
@@ -10,10 +10,14 @@ const Stsoftware = (props) => {
     const [listContextFe07D2, setListContextFe07D2] = useState([])
     const [listFe07, setListFe07] = useState([])
     const backgroundImageFe07 =
-        {id: "1", backGroundFe07: "https://drive.google.com/uc?export=view&id=17pHRhgZBj5Uq3PV723tNz0eCuglZcorD"}
-    const bannerCaption = useState(
-        {title:"ST SORTWARE", h1: "ST SOFTWARE", h2: "WE OFFER A WEALTH OF SERVICES TO ADDRESS YOUR TECHNOLOGY NEEDS."},
-    )
+        {backGroundFe07: "https://drive.google.com/uc?export=view&id=17pHRhgZBj5Uq3PV723tNz0eCuglZcorD"}
+    const bannerCaption =
+        {
+            title:"ST SOFTWARE - ST United",
+            h1: "ST SOFTWARE",
+            h2: "WE OFFER A WEALTH OF SERVICES TO ADDRESS YOUR TECHNOLOGY NEEDS.",
+        }
+
     useEffect(() => {
         fetchListFE07Div1();
     }, [])
@@ -38,7 +42,7 @@ const Stsoftware = (props) => {
     return (
             <body>
             <Row className="fe07-container" style={{margin: "0"}}>
-                <Fe07Header
+                <Header
                     backgroundImageFe07={backgroundImageFe07}
                     bannerCaption={bannerCaption}
                 />
