@@ -45,7 +45,7 @@ const TypicalChild = (props) => {
                                             </Row>
                                         </Col>
                                         <Col className="fe02-wpb__caption--after" key={item.id} md={3} xs={12}>
-                                            <Row className="fe02-wpb__caption__inner">
+                                            <Row className="fe02-wpb__caption__inner  fe02-wpb__caption__inner--overflow-scroll">
                                                 <h4 className="fe02-wpb__caption__team--name">
                                                     <a className="fe02-wpb__caption__teamCaption" href="#">
                                                         {item.teamCaption}

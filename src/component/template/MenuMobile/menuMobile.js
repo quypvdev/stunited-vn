@@ -78,7 +78,9 @@ function MenuMobile() {
                                             item.childrens && subMobileToggle ? 'nav-item-mobile-active' : ''
                                         } ${item.childrens && 'nav-item-mobile--had-children'}`}
                                     >
-                                        <NavLink className="item-content">{item.content}</NavLink>
+                                        <NavLink to={item.to} className="item-content">
+                                            {item.content}
+                                        </NavLink>
                                     </NavLink>
                                 ) : (
                                     <NavLink
@@ -109,7 +111,7 @@ function MenuMobile() {
                                                     className="sub-item-mobile"
                                                     key={itemChildren.id}
                                                 >
-                                                    <NavLink className="item-content-mobile">
+                                                    <NavLink to={item.to} className="item-content-mobile">
                                                         {itemChildren.content}
                                                     </NavLink>
                                                 </NavLink>

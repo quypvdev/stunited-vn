@@ -47,10 +47,12 @@
                     transition: all 0.5s ease 0s;
 
                     .fe02-wpb__caption__inner {
-                        max-height: 101%;
+                        max-width: 100%;
+                        max-height: 100%;
                         padding: 15px 23px;
                         text-align: center;
                         position: absolute;
+                        margin: 0;
                         top: 50%;
                         transform: translateY(-50%);
 
@@ -217,5 +219,11 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 922px) {
+    .fe02-wpb__caption--after {
+        overflow-y: scroll;
     }
 }
