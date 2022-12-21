@@ -70,12 +70,22 @@ function MenuMobile() {
                     <ul ref={ref} className="main-menu-mobile">
                         {menuItems.map((item) => (
                             <div key={item.id}>
-                                <li
-                                    className={`nav-item-mobile ${
-                                        item.childrens && subMobileToggle ? 'nav-item-mobile-active' : ''
-                                    } ${item.childrens && 'nav-item-mobile--had-children'}`}
-                                >
-                                    {item.childrens ? (
+                                {!item.childrens ? (
+                                    <NavLink
+                                        onClick={handleMenuItemsClick}
+                                        to={item.to}
+                                        className={`nav-item-mobile ${
+                                            item.childrens && subMobileToggle ? 'nav-item-mobile-active' : ''
+                                        } ${item.childrens && 'nav-item-mobile--had-children'}`}
+                                    >
+                                        <NavLink className="item-content">{item.content}</NavLink>
+                                    </NavLink>
+                                ) : (
+                                    <NavLink
+                                        className={`nav-item-mobile ${
+                                            item.childrens && subMobileToggle ? 'nav-item-mobile-active' : ''
+                                        } ${item.childrens && 'nav-item-mobile--had-children'}`}
+                                    >
                                         <button className="nav-item-mobile-active-btn" onClick={handleBtnSubMenuMobile}>
                                             <NavLink className="item-content">{item.content}</NavLink>
                                             {subMobileToggle ? (
@@ -84,27 +94,24 @@ function MenuMobile() {
                                                 <FontAwesomeIcon className="sub-menu-mobile-icon" icon={faCaretRight} />
                                             )}
                                         </button>
-                                    ) : (
-                                        <NavLink onClick={handleMenuItemsClick} to={item.to} className="item-content">
-                                            {item.content}
-                                        </NavLink>
-                                    )}
-                                </li>
+                                    </NavLink>
+                                )}
                                 {item.childrens && (
                                     <ul
                                         className={`sub-menu-mobile ${subMobileToggle ? 'sub-menu-mobile-active' : ''}`}
                                     >
                                         {item.childrens ? (
                                             item.childrens.map((itemChildren) => (
-                                                <li className="sub-item-mobile" key={itemChildren.id}>
-                                                    <NavLink
-                                                        onClick={handleMenuItemsClick}
-                                                        to={itemChildren.to}
-                                                        className="item-content-mobile"
-                                                    >
+                                                <NavLink
+                                                    onClick={handleMenuItemsClick}
+                                                    to={itemChildren.to}
+                                                    className="sub-item-mobile"
+                                                    key={itemChildren.id}
+                                                >
+                                                    <NavLink className="item-content-mobile">
                                                         {itemChildren.content}
                                                     </NavLink>
-                                                </li>
+                                                </NavLink>
                                             ))
                                         ) : (
                                             <></>
