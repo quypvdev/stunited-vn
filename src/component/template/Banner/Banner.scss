@@ -134,6 +134,18 @@
             letter-spacing: 0.5px;
         }
     }
+    @media (max-width: 370px) {
+        .main-banner__item-content-box {
+            padding: 2px 6px;
+            border-width: 1px;
+            height: 22px;
+        }
+        .main-banner__item-content {
+            font-size: 6px;
+            line-height: 16px;
+            letter-spacing: 0.5px;
+        }
+    }
 
     .main-banner__loading {
         height: 5px;

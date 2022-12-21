@@ -4,26 +4,58 @@ import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { menuItems } from '../../../constant';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function MenuMobile() {
+    const ref = useRef();
+
     const [menuMobileToggle, setMenuMobileToggle] = useState(false);
     const [subMobileToggle, setSubMobileToggle] = useState(false);
 
     const handleBtnMenuMobile = () => {
         setMenuMobileToggle(!menuMobileToggle);
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        menuBtn.classList.add('menu-mobile__menu-btn-status--disable');
+    };
+    const handleMenuItemsClick = () => {
+        setMenuMobileToggle(false);
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        menuBtn.classList.remove('menu-mobile__menu-btn-status--disable');
     };
 
     const handleBtnSubMenuMobile = () => {
         setSubMobileToggle(!subMobileToggle);
     };
 
+    useEffect(() => {
+        const checkIfClickedOutside = (e) => {
+            // If the menu is open and the clicked target is not within the menu,
+            // then close the menu
+            if (menuMobileToggle && ref.current && !ref.current.contains(e.target)) {
+                setMenuMobileToggle(false);
+                const menuBtn = document.getElementById('mobile-menu-btn');
+                menuBtn.classList.remove('menu-mobile__menu-btn-status--disable');
+            }
+        };
+
+        document.addEventListener('mousedown', checkIfClickedOutside);
+
+        return () => {
+            // Cleanup the event listener
+            document.removeEventListener('mousedown', checkIfClickedOutside);
+        };
+    }, [menuMobileToggle]);
+
     return (
         <div className="mobile-header d-lg-none position-relative">
             <div className="container-mobile container ">
                 <div className="row row-cols-4 menu-mobile">
                     <div className="col menu-mobile__menu-btn">
-                        <button onClick={handleBtnMenuMobile}>
+                        <button
+                            id="mobile-menu-btn"
+                            className="menu-mobile__menu-btn-status"
+                            onClick={handleBtnMenuMobile}
+                        >
                             <i className="fa fa-navicon menu-btn__icon-mobile"></i>
                         </button>
                     </div>
@@ -35,7 +67,7 @@ function MenuMobile() {
             </div>
             <div className={`nav-menu-mobile-dropdown ${menuMobileToggle ? 'nav-menu-mobile-dropdown-active' : ''}`}>
                 <nav className="nav-menu-mobile">
-                    <ul className="main-menu-mobile">
+                    <ul ref={ref} className="main-menu-mobile">
                         {menuItems.map((item) => (
                             <div key={item.id}>
                                 <li
@@ -53,7 +85,7 @@ function MenuMobile() {
                                             )}
                                         </button>
                                     ) : (
-                                        <NavLink to={item.to} className="item-content">
+                                        <NavLink onClick={handleMenuItemsClick} to={item.to} className="item-content">
                                             {item.content}
                                         </NavLink>
                                     )}
@@ -65,7 +97,11 @@ function MenuMobile() {
                                         {item.childrens ? (
                                             item.childrens.map((itemChildren) => (
                                                 <li className="sub-item-mobile" key={itemChildren.id}>
-                                                    <NavLink to={itemChildren.to} className="item-content-mobile">
+                                                    <NavLink
+                                                        onClick={handleMenuItemsClick}
+                                                        to={itemChildren.to}
+                                                        className="item-content-mobile"
+                                                    >
                                                         {itemChildren.content}
                                                     </NavLink>
                                                 </li>

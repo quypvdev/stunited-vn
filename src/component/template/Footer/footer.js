@@ -2,6 +2,14 @@ import './Footer.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { menuItems } from '../../../constant';
+import { NavLink } from 'react-router-dom';
+
+const handleClick = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+};
 
 const NavMenuFooter = () => (
     <Col lg className="nav-menu-footer">
@@ -9,20 +17,25 @@ const NavMenuFooter = () => (
         <ul className="nav-menu-footer__list">
             {menuItems.map((item) => (
                 <div key={item.id} className="nav-menu-footer__item">
-                    <a
+                    <NavLink
+                        onClick={handleClick}
                         className={`nav-menu-footer__item-content ${
                             item.childrens && 'nav-menu-footer__item-content--had-childrens'
                         }`}
-                        href={item.to}
+                        to={item.to}
                     >
                         {item.content}
-                    </a>
+                    </NavLink>
                     {item.childrens &&
                         item.childrens.map((itemChildren) => (
                             <div key={itemChildren.id} className="nav-menu-footer__sub-item">
-                                <a className="nav-menu-footer__sub-item-content" href={itemChildren.to}>
+                                <NavLink
+                                    onClick={handleClick}
+                                    className="nav-menu-footer__sub-item-content"
+                                    to={itemChildren.to}
+                                >
                                     {itemChildren.content}
-                                </a>
+                                </NavLink>
                             </div>
                         ))}
                 </div>
@@ -61,26 +74,16 @@ function Footer() {
                         <NavMenuFooter />
                         <ContactFooter />
                         <Col lg>
-                            <div className="facebook-iframe-box">
-                                <div
-                                    className="fb-page"
-                                    data-href="https://www.facebook.com/stunited.vn"
-                                    data-tabs="timeline"
-                                    data-width={340}
-                                    data-height={130}
-                                    data-small-header={false}
-                                    data-adapt-container-width={true}
-                                    data-hide-cover={false}
-                                    data-show-facepile={true}
-                                >
-                                    <blockquote
-                                        cite="https://www.facebook.com/stunited.vn"
-                                        className="fb-xfbml-parse-ignore"
-                                    >
-                                        <a href="https://www.facebook.com/stunited.vn">ST United</a>
-                                    </blockquote>
-                                </div>
-                            </div>
+                            <iframe
+                                src={
+                                    'https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstunited.vn&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&appId'
+                                }
+                                width={340}
+                                height={331}
+                                style={{ border: 'none', overflow: 'hidden' }}
+                                frameborder={0}
+                                title="skt"
+                            ></iframe>
                         </Col>
                     </Row>
                 </div>

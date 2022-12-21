@@ -18,6 +18,9 @@
         background: none;
     }
 }
+.menu-mobile__menu-btn-status--disable {
+    pointer-events: none;
+}
 
 .menu-mobile__logo-box {
     display: flex;
