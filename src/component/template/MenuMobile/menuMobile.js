@@ -4,9 +4,11 @@ import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { menuItems } from '../../../constant';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function MenuMobile() {
+    const ref = useRef();
+
     const [menuMobileToggle, setMenuMobileToggle] = useState(false);
     const [subMobileToggle, setSubMobileToggle] = useState(false);
 
@@ -18,8 +20,25 @@ function MenuMobile() {
         setSubMobileToggle(!subMobileToggle);
     };
 
+    useEffect(() => {
+        const checkIfClickedOutside = (e) => {
+            // If the menu is open and the clicked target is not within the menu,
+            // then close the menu
+            if (menuMobileToggle && ref.current && !ref.current.contains(e.target)) {
+                setMenuMobileToggle(false);
+            }
+        };
+
+        document.addEventListener('mousedown', checkIfClickedOutside);
+
+        return () => {
+            // Cleanup the event listener
+            document.removeEventListener('mousedown', checkIfClickedOutside);
+        };
+    }, [menuMobileToggle]);
+
     return (
-        <div className="mobile-header d-lg-none position-relative">
+        <div ref={ref} className="mobile-header d-lg-none position-relative">
             <div className="container-mobile container ">
                 <div className="row row-cols-4 menu-mobile">
                     <div className="col menu-mobile__menu-btn">
