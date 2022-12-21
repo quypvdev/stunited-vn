@@ -61,8 +61,11 @@
           display: flex;
           justify-content: center;
           font-family: 'Roboto', sans-serif;
-          @media only screen and (max-width:1024px){
+          @media only screen and (max-width:1025px){
             max-width:1000px;
+          }
+          @media only screen and (max-width:924px){
+            max-width:785px;
           }
         }
       }
