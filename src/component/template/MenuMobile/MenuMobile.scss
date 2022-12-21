@@ -63,7 +63,7 @@
     list-style: none;
     padding: 0;
     box-shadow: 0 4px 5px rgb(0 0 0 / 15%);
-    li + li {
+    a + a {
         border-top: 1px solid white;
     }
 }

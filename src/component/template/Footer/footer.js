@@ -79,7 +79,7 @@ function Footer() {
                                     'https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstunited.vn&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&appId'
                                 }
                                 width={340}
-                                height={331}
+                                height={130}
                                 style={{ border: 'none', overflow: 'hidden' }}
                                 frameborder={0}
                                 title="skt"

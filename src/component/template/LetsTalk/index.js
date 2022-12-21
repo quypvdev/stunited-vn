@@ -151,7 +151,7 @@ const LetsTalk = () => {
                                                         </label>
 
                                                         <input
-                                                            type="email"
+                                                            type="text"
                                                             name="email"
                                                             value={formValues.email}
                                                             onChange={handleChange}
