@@ -14,6 +14,13 @@ function MenuMobile() {
 
     const handleBtnMenuMobile = () => {
         setMenuMobileToggle(!menuMobileToggle);
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        menuBtn.classList.add('menu-mobile__menu-btn-status--disable');
+    };
+    const handleMenuItemsClick = () => {
+        setMenuMobileToggle(false);
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        menuBtn.classList.remove('menu-mobile__menu-btn-status--disable');
     };
 
     const handleBtnSubMenuMobile = () => {
@@ -26,6 +33,8 @@ function MenuMobile() {
             // then close the menu
             if (menuMobileToggle && ref.current && !ref.current.contains(e.target)) {
                 setMenuMobileToggle(false);
+                const menuBtn = document.getElementById('mobile-menu-btn');
+                menuBtn.classList.remove('menu-mobile__menu-btn-status--disable');
             }
         };
 
@@ -38,11 +47,15 @@ function MenuMobile() {
     }, [menuMobileToggle]);
 
     return (
-        <div ref={ref} className="mobile-header d-lg-none position-relative">
+        <div className="mobile-header d-lg-none position-relative">
             <div className="container-mobile container ">
                 <div className="row row-cols-4 menu-mobile">
                     <div className="col menu-mobile__menu-btn">
-                        <button onClick={handleBtnMenuMobile}>
+                        <button
+                            id="mobile-menu-btn"
+                            className="menu-mobile__menu-btn-status"
+                            onClick={handleBtnMenuMobile}
+                        >
                             <i className="fa fa-navicon menu-btn__icon-mobile"></i>
                         </button>
                     </div>
@@ -54,7 +67,7 @@ function MenuMobile() {
             </div>
             <div className={`nav-menu-mobile-dropdown ${menuMobileToggle ? 'nav-menu-mobile-dropdown-active' : ''}`}>
                 <nav className="nav-menu-mobile">
-                    <ul className="main-menu-mobile">
+                    <ul ref={ref} className="main-menu-mobile">
                         {menuItems.map((item) => (
                             <div key={item.id}>
                                 <li
@@ -72,7 +85,7 @@ function MenuMobile() {
                                             )}
                                         </button>
                                     ) : (
-                                        <NavLink to={item.to} className="item-content">
+                                        <NavLink onClick={handleMenuItemsClick} to={item.to} className="item-content">
                                             {item.content}
                                         </NavLink>
                                     )}
@@ -84,7 +97,11 @@ function MenuMobile() {
                                         {item.childrens ? (
                                             item.childrens.map((itemChildren) => (
                                                 <li className="sub-item-mobile" key={itemChildren.id}>
-                                                    <NavLink to={itemChildren.to} className="item-content-mobile">
+                                                    <NavLink
+                                                        onClick={handleMenuItemsClick}
+                                                        to={itemChildren.to}
+                                                        className="item-content-mobile"
+                                                    >
                                                         {itemChildren.content}
                                                     </NavLink>
                                                 </li>
