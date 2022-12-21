@@ -63,7 +63,7 @@ function Banner() {
                     </SwiperSlide>
                 ))}
 
-                <div class="swiper-pagination"></div>
+                <div className="swiper-pagination"></div>
             </Swiper>
         </div>
     );
