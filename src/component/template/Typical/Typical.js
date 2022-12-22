@@ -25,7 +25,7 @@ return (
                             <h2>
                                 Typical successful stories
                             </h2>
-                            <h3>
+                            <h3 style = {{fontWeight:"300"}}>
                                 From ideas turned into carefully crafted pixels and problems crafted into solutions.
                             </h3>
                         </Col>
