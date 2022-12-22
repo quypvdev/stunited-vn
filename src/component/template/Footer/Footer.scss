@@ -159,3 +159,15 @@
 .facebook-iframe-box {
     margin-bottom: 30px;
 }
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 992px) {
+    .copyright {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
