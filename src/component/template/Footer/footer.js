@@ -92,7 +92,7 @@ function Footer() {
             <div className="footer-bottom">
                 <div className="container">
                     <Row>
-                        <Col md={3}>
+                        <Col className="copyright" xs={12} sm={12} md={12} lg={3}>
                             <p>Copyright © 2019 by ST United.</p>
                         </Col>
                     </Row>

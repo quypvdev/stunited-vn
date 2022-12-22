@@ -60,7 +60,9 @@ function MenuMobile() {
                         </button>
                     </div>
                     <div className="col-6 menu-mobile__logo-box">
-                        <img className="logo-box__img" src={images.logo} alt="logo" />
+                        <NavLink to={'/'}>
+                            <img className="logo-box__img" src={images.logo} alt="logo" />
+                        </NavLink>
                     </div>
                     <div className="col"></div>
                 </div>
